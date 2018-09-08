@@ -1,0 +1,401 @@
+选择器，圆角效果，块阴影与文字阴影，色彩，渐变效果，个性化字体，多背景图，边框背景图，变形处理，多栏布局，
+媒体查询。
+
+1 CSS3边框 圆角效果 border-radius
+   border-radius: 5px 4px 3px 2px;
+2 CSS3边框 阴影 box-shadow
+   box-shadow:4px 2px 6px #333333;外阴影
+   box-shadow:4px 2px 6px #333333 inset;内阴影
+（x与Y轴的偏移量可以为负数）
+3 CSS3边框 为边框应用图片 border-image
+      border-image:url(borderimg.png) 70 repeat  
+4 CSS3颜色 颜色之RGBA
+   加了一种透明度 background-color:rgba(100,120,60,0.5);
+5 CSS3颜色 渐变色彩 
+   background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
+6 CSS3文字与字体 text-overflow 与 word-wrap
+   text-overflow:ellipsis; 
+   overflow:hidden; 
+   white-space:nowrap;
+   溢出部分变成省略号
+7 CSS3文字与字体 嵌入字体@font-face
+   @font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。
+   @font-face {
+    font-family : 字体名称;
+    src : 字体文件在服务器上的相对或绝对路径;
+    }
+8 CSS3文字与字体 文本阴影text-shadow 
+   text-shadow: X-Offset Y-Offset blur color;
+9 CSS3背景 background-origin 
+   需要注意的是，如果背景不是no-repeat，这个属性无效，它会从边框开始显示。
+   background-origin ： border-box | padding-box | content-box;
+10 CSS3背景 background-clip
+   用来将背景图片做适当的裁剪以适应实际需要。
+   background-clip ： border-box | padding-box | content-box | no-clip 	
+11 CSS3背景 background-size
+   设置背景图片的大小，以长度值或百分比显示，还可以通过cover和contain来对图片进行伸缩。
+   background-size: auto | <长度值> | <百分比> | cover | contain
+12 CSS3背景 multiple backgrounds
+   多重背景
+13 CSS3选择器 属性选择器
+    E[att^="val"]  选择匹配元素E，且E元素定义了属性att,其属性值以val 开头的任何字符串
+    E[att$="val"]  选择匹配元素E，且E元素定义了属性att,其属性值以val 结尾的任何字符串
+    E[att*="val"]  选择匹配元素E，且E元素定义了属性att,其属性值以val 包含的任何字符串
+14 CSS3 结构性伪类选择器—root
+    :not选择器称为否定选择器,可以选择除某个元素之外的所有元素
+    input:not([type="submit"]){border:1px solid red;}
+15 CSS3 结构性伪类选择器—empty
+    :empty选择器表示的就是空。用来选择没有任何内容的元素，这里没有内容指的是一点内容都没有，哪怕是一个空格
+16 CSS3 结构性伪类选择器—target
+    :target选择器称为目标选择器，用来匹配文档(页面)的url的某个标志符的目标元素
+    点击链接变样式
+17 CSS3 结构性伪类选择器—first-child
+    选择父元素的第一个子元素的元素E
+18 CSS3 结构性伪类选择器—last-child 
+    选择器选择的是元素的最后一个子元素
+19 CSS3 结构性伪类选择器—nth-child(n)
+    父元素的一个或多个特定的子元素
+20 CSS3 结构性伪类选择器—nth-last-child(n)
+    从某父元素的最后一个子元素开始计算
+21 CSS3 first-of-type选择器
+    指定了元素的类型,其主要用来定位一个父元素下的某个类型的第一个子元素。
+22 CSS3 nth-of-type(n)选择器
+    计算父元素中指定的某种类型的子元素
+23 CSS3 last-of-type选择器
+    “:last-of-type”选择器和“:first-of-type”选择器功能是一样的，不同的是他选择是父元素下的某个类型的最后一个子元素
+24 CSS3 nth-last-of-type(n)选择器
+    选择父元素中指定的某种子元素类型，但它的起始方向是从最后一个子元素开始，
+25 CSS3 only-child选择器
+    匹配的元素的父元素中仅有一个子元素，而且是一个唯一的子元素。
+26 CSS3 only-of-type选择器
+    选择器用来选择一个元素是它的父元素的唯一一个相同类型的子元素
+27 CSS3选择器 :enabled选择器
+    在Web的表单中，有些表单元素有可用（“:enabled”）和不可用（“:disabled”）状态，比如输入框，密码框，复选框等。在默认情况之下       ，这些表单元素都处在可用状态。那么我们可以通过伪选择器“:enabled”对这些表单元素设置样式。
+28 CSS3选择器 :disabled选择器
+    “:disabled”选择器刚好与“:enabled”选择器相反，用来选择不可用表单元素。要正常使用“:disabled”选择器，需要在表单元素的HTML中     设置“disabled”属性
+29 CSS3选择器 :checked选择器
+     “:checked”配合其他标签实现自定义样式。而“:checked”表示的是选中状态。
+30 CSS3选择器 ::selection选择器
+     “::selection”伪元素是用来匹配突出显示的文本。浏览器默认情况下，选择网站文本是深蓝的背景，白色的字体
+31 CSS3选择器 :read-only选择器
+      :read-only”伪类选择器用来指定处于只读状态元素的样式。简单点理解就是，元素中设置了“readonly=’readonly’”
+      在HTML中设置readonly="readonly
+32 CSS3选择器 :read-write选择器
+      “:read-write”选择器刚好与“:read-only”选择器相反，主要用来指定当元素处于非只读状态时的样式
+33 CSS3选择器 ::before和::after
+       ::before和::after这两个主要用来给元素的前面或后面插入内容，这两个常和"content"配合使用，使用的场景最多的就是清除浮动。
+       .clearfix::before,
+       .clearfix::after {
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        }
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}
+
+%%%% 注意 变形用transform  动画用 transition
+
+34 CSS3变形--旋转 rotate()
+      通过指定的角度参数使元素相对原点进行旋转
+      transform:rotate(-20deg);
+35 CSS3中的变形--扭曲 skew()
+      它可以将一个对象以其中心位置围绕着X轴和Y轴按照一定的角度倾斜
+      transform:skew(45deg)
+36 CSS3中的变形--缩放 scale()
+      scale(X,Y)使元素水平方向和垂直方向同时缩放（也就是X轴和Y轴同时缩放）
+      scaleX(x)元素仅水平方向缩放（X轴缩放）
+      scaleY(y)元素仅垂直方向缩放（Y轴缩放）
+37 CSS3中的变形--位移 translate()
+      translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）
+      translateX(x)仅水平方向移动（X轴移动）
+      translateY(Y)仅垂直方向移动（Y轴移动）
+
+38 CSS3中的变形--矩阵 matrix()
+      matrix() 是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵
+39 CSS3中的变形--原点 transform-origin
+      对元素进行原点位置改变，使元素原点不在元素的中心位置，以达到需要的原点位置。
+        transform-origin: top right; 左上角圆点
+40 CSS3中的动画--过渡属性 transition-property 
+       通过鼠标的单击、获得焦点，被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。
+        div {
+  		 width: 200px;
+ 		 height: 200px;
+ 		 background-color:red;
+ 		 margin: 20px auto;
+  		-webkit-transition: background-color .5s ease .1s;
+ 		 transition: background-color .5s ease .1s;
+	    }
+	div:hover {
+  	         background-color: orange;
+             }
+41 CSS3中的动画--过渡所需时间 transition-duration
+       用来设置一个属性过渡到另一个属性所需的时间，也就是从旧属性过渡到新属性花费的时间长度，俗称持续时间。
+42 CSS3中的动画--过渡函数 transition-timing-function
+        指定浏览器的过渡速度，以及过渡期间的操作进展情况
+43 CSS3中的动画--过渡延迟时间 transition-delay
+       说当改变元素属性值后多长时间开始执行。
+
+44 CSS3 Keyframes介绍
+       Keyframes被称为关键帧，其类似于Flash中的关键帧。在CSS3中其主要以“@keyframes”开头，后面紧跟着是动画名称加上一对花括号“{…       }”，括号中就是一些不同时间段样式规则。
+
+45 CSS3中调用动画
+	div:hover{
+ 	    animation: wobble 5s ease .1s;
+	}
+       animation-name属性主要是用来调用 @keyframes 定义好的动画。
+46 CSS3中设置动画播放时间
+       animation-duration主要用来设置CSS3动画播放时间，其使用方法和transition-duration类似
+47 CSS3中设置动画播放方式
+       animation-timing-function属性主要用来设置动画播放方式。主要让元素根据时间的推进来改变属性值的变换速率，简单点说就是动画的播        放方式。
+48 CSS3中设置动画开始播放的时间
+       animation-delay属性用来定义动画开始播放的时间，用来触发动画播放的时间点。和transition-delay属性一样，用于定义在浏览器开始执       行动画之前等待的时间。
+49 CSS3中设置动画播放次数
+        animation-iteration-count: infinite | <number> [, infinite | <number>]*
+        如果取值为infinite，动画将会无限次的播放
+50 CSS3中设置动画播放方向
+	animation-direction属性主要用来设置动画播放方向，其语法规则如下：
+	animation-direction:normal | alternate [, normal | alternate]*
+	   1、normal是默认值，如果设置为normal时，动画的每次循环都是向前播放；
+	   2、另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放
+51 CSS3中设置动画的播放状态
+        animation-play-state属性主要用来控制元素动画的播放状态。
+        其主要有两个值：running和paused。
+	主要作用就是类似于音乐播放器一样，可以通过paused将正在播放的动画停下来，也可以通过running将暂停的动画重新播放，这里的重新	播放不一定是从元素动画的开始播放，而是从暂停的那个位置开始播放。另外如果暂停了动画的播放，元素的样式将回到最原始设置状态。
+
+52 CSS3中设置动画时间外属性
+        animation-fill-mode属性定义在动画开始之前和结束之后发生的操作。主要具有四个属性值：none、forwards、backwords和both。
+
+53 CSS3 多列布局——Columns
+         columns: 200px 2;多列布局columns属性参数主要就两个属性参数：列宽和列数。
+54 CSS3 多列布局——column-width
+         column-width的使用和CSS中的width属性一样，不过不同的是，column-width属性在定义元素列宽的时候，既可以单独使用，也可以和多         列属性中其他属性配合使用。
+55 CSS3 多列布局——column-count
+         column-count属性主要用来给元素指定想要的列数和允许的最大列数。
+56 CSS3 列间距column-gap
+        column-gap主要用来设置列与列之间的间距	
+57 CSS3 列表边框column-rule
+        column-rule主要是用来定义列与列之间的边框宽度、边框样式和边框颜色。就有点类似于常用的border属性。
+58 CSS3 跨列设置column-span
+        column-span主要用来定义一个分列元素中的子元素能跨列多少。column-width、column-count等属性能让一元素分成多列，不管里面元素        如何排放顺序，他们都是从左向右的放置内容，但有时我们需要基中一段内容或一个标题不进行分列，也就是横跨所有列，此时column-        span就可以轻松实现，
+
+59 CSS3 盒子模型
+        W3C标准盒模型 element空间高度＝内容高度＋内距＋边框＋外距
+	 {
+	-webkit-box-sizing:border-box;
+
+	        -moz-box-sizing:border-box;
+		
+  -o-box-sizing:border-box;
+	       
+  -ms-box-sizing:border-box;
+
+		 box-sizig:border-box;
+}
+60 CSS3 伸缩布局
+	Flexbox布局功能主要具有以下几点：
+	第一，屏幕和浏览器窗口大小发生改变也可以灵活调整布局；
+	第二，可以指定伸缩项目沿着主轴或侧轴按比例分配额外空间（伸缩容器额外空间），从而调整伸缩项目的大小；
+	第三，可以指定伸缩项目沿着主轴或侧轴将伸缩容器额外空间，分配到伸缩项目之前、之后或之间；
+	第四，可以指定如何将垂直于元素布局轴的额外空间分布到该元素的周围；
+	第五，可以控制元素在页面上的布局方向；
+	第六，可以按照不同于文档对象模型（DOM）所指定排序方式对屏幕上的元素重新排序。也就是说可以在浏览器渲染中不按照文档流先后顺  		序重排伸缩项目顺序。
+
+61 Media Queries——媒体类型
+       	@media screen and (min-width:600px) and (max-width:900px){
+  		body {background-color:#f5f5f5;}
+	}	
+
+62 Responsive设计
+       什么是响应式设计呢？维基百科是这样对响应式作的描述：“Responsive设计简单的称为RWD，是精心提供各种设备都能浏览网页的一种设计		方法，RWD能让你的网页在不同的设备中展现不同的设计风格。”从这一点描述来说，RWD不是流体布局，也不是网格布局，而是一种独特的		网页设计方法。
+       1.流体网格
+       2.弹性图片
+       3.媒体查询
+       4.屏幕分辨率
+       5.主要断点
+	在Responsive布局中，可以毫无保留的丢弃：
+	第一， 尽量少用无关紧要的div；
+	第二，不要使用内联元素（inline）；		
+	第三，尽量少用JS或flash；
+	第四，丢弃没用的绝对定位和浮动样式；
+	第五，摒弃任何冗余结构和不使用100%设置。
+	有舍才有得，丢弃了一些对Responsive有影响的东东，那么有哪些东东能帮助Responsive确定更好的布局呢？
+	第一，使用HTML5 Doctype和相关指南；
+	第二，重置好你的样式（reset.css）；
+	第三，一个简单的有语义的核心布局；
+	第四，给重要的网页元素使用简单的技巧，比如导航菜单之类元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
